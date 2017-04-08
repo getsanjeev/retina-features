@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import scipy.misc
 
-images = ['1.png', '2.png',  '3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png']
+images = ['1.jpeg', '2.jpeg',  '3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
 name = ''
 counter = 1;
 for image in images:
