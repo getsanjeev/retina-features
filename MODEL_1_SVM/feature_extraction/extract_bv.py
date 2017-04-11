@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 import scipy.misc
+import glob
+
 
 def remove_white_spots(image,founter):	
 	xcount = founter;		
@@ -20,14 +22,17 @@ def remove_white_spots(image,founter):
 	scipy.misc.imsave(xname,xmask)
 	return;
 
-images = ['1.png', '2.png',  '3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png']
 name = ''
 counter = 1;
 founter = 11;
+no_of_images = 0;
 
-for image in images:
-	fundus = cv2.imread(image)	
+images = [cv2.imread(file) for file in glob.glob('/home/karan/DR/MODEL_1_SVM/feature_extraction/data/*png')]
+print(len(images))
 
+while no_of_images < 130:
+	print(no_of_images)
+	fundus = images[no_of_images]
 	# applying contrast enhancement & preprocesing stuff
 	dim = (800,700)
 	fundus = cv2.resize(fundus, dim, interpolation = cv2.INTER_AREA)	
@@ -81,6 +86,7 @@ for image in images:
 	scipy.misc.imsave(name2, newfin )
 	counter = counter +1;
 	founter = founter +1;
+	no_of_images = no_of_images+1;
 
 print("fcuk")
 cv2.waitKey(0)
