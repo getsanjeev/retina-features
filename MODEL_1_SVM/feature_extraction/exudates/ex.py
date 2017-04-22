@@ -8,8 +8,12 @@ import operator
 
 name = ''
 counter = 1;
-founter = 11;
+founter = 501;
 no_of_images = 0
+
+
+#def get_structure_index(subimage):
+
 
 
 def remove_optical_disk(image,counter):	
@@ -18,43 +22,47 @@ def remove_optical_disk(image,counter):
 	row = 0	
 	get_coloumn = 0
 	get_row = 0
+	gotit = 0
 	mean_intensity_of_image = np.mean(image)	
 	size_array = image.shape
 	no_of_rows = size_array[0]
 	no_of_coloumns = size_array[1]	
 	mask_statistic_list = []
-	mean_table = []
-	var_table = []
+	mean_table = []	
 	index_table_row = []
 	index_table_coloumn = []
 	regions_with_greater_intensity = []
 	while row < no_of_rows:
 		while coloumn < no_of_coloumns:			
 			subarray = image[row:row+159,coloumn:coloumn+119]			
-			mean_table.append(np.mean(subarray))
-			var_table.append(np.var(subarray))
+			mean_table.append(np.mean(subarray))			
 			index_table_row.append(row)
 			index_table_coloumn.append(coloumn)					
 			coloumn = coloumn+30			
 		coloumn = 0
 		row = row+40	
-	index, value = max(enumerate(mean_table), key=operator.itemgetter(1))
-	get_row = index_table_row[index]
-	get_coloumn = index_table_coloumn[index]
-	image[get_row:get_row+159,get_coloumn:get_coloumn+119]	= mean_intensity_of_image	
+	sorted(mean_table)
+	while gotit == 1 :
+		index, value = max(enumerate(mean_table), key=operator.itemgetter(1))
+		get_row = index_table_row[index]
+		get_coloumn = index_table_coloumn[index]
+		if get_row > 250 and get_row < 650 :
+			gotit = 0
+		else :
+			print(mean_table.pop())
+		
+	image[get_row:get_row+159,get_coloumn:get_coloumn+119]	= mean_intensity_of_image
+	#blur = cv2.GaussianBlur(image,(5,5),0)	
+	#im_at_mean = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 0)
 	name2 = str(counter) + '.jpg'
-	scipy.misc.imsave(name2,image)
-	# for i in statistic_table :
-	# 	if([i][1] > mean_intensity_of_image) :
-	# 		regions_with_greater_intensity.append([i][1])					
-
-	return index;
+	scipy.misc.imsave(name2,image)	
+	return ;
 
 
-images = [cv2.imread(file) for file in glob.glob('/home/sherlock/feature_extraction/data/*png')]
+images = [cv2.imread(file) for file in glob.glob('/home/sherlock/DR/MODEL_1_SVM/data/*png')]
 print(len(images))
 
-while no_of_images < 130:
+while no_of_images < 2:
 
 	fundus = images[no_of_images]	
 	dim = (800,600)
@@ -69,7 +77,6 @@ while no_of_images < 130:
 
 	# xmask = np.ones(fundus.shape[:2], dtype="uint8") * 255
 	# x1, xcontours, xhierarchy = cv2.findContours(mf_fundus.copy(),cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)	
-
 	# for cnt in xcontours:		
 	# 	peri = cv2.arcLength(cnt, True)		   			
 	# 	if cv2.contourArea(cnt) >= 200:
@@ -78,9 +85,8 @@ while no_of_images < 130:
 	# 		shape = "veins"
 	# 	if(shape=="circle"):
 	# 		cv2.drawContours(xmask, [cnt], -1, 0, -1)	
-
 	# circles = cv2.HoughCircles(inv_fundus,cv2.HOUGH_GRADIENT,1,20,
- #                            param1=100,param2=30,minRadius=0,maxRadius=0)	
+    # param1=100,param2=30,minRadius=0,maxRadius=0)	
 	# if circles is not None:
 	# 	circles = np.round(circles[0, :]).astype("int")	
 

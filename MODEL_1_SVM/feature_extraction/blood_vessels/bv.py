@@ -4,35 +4,17 @@ import scipy.misc
 import glob
 
 
-def remove_white_spots(image,founter):	
-	xcount = founter;		
-	xname = str(founter) + '.jpg'
-	xmask = np.ones(f5.shape[:2], dtype="uint8") * 255
-	x1, xcontours, xhierarchy = cv2.findContours(image,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)	
-	for cnt in xcontours:
-		shape = "unidentified"
-		peri = cv2.arcLength(cnt, True)
-		approx = cv2.approxPolyDP(cnt, 0.04 * peri, True)   				
-		if len(approx) >7:
-			shape = "triangle"	
-		else:		
-			shape = "circle"
-		if(shape=="circle"):
-			cv2.drawContours(xmask, [cnt], -1, 0, -1)
-	scipy.misc.imsave(xname,xmask)
-	return;
-
 name = ''
 counter = 1;
-founter = 11;
-no_of_images = 0;
+no_of_images = 0
 
-images = [cv2.imread(file) for file in glob.glob('/home/karan/DR/MODEL_1_SVM/feature_extraction/data/*png')]
+images = [cv2.imread(file) for file in glob.glob('/home/sherlock/feature_extraction/data/*png')]
 print(len(images))
 
 while no_of_images < 130:
 	print(no_of_images)
 	fundus = images[no_of_images]
+
 	# applying contrast enhancement & preprocesing stuff
 	dim = (800,700)
 	fundus = cv2.resize(fundus, dim, interpolation = cv2.INTER_AREA)	
@@ -50,7 +32,7 @@ while no_of_images < 130:
 	f4 = cv2.subtract(R3,contrast_enhanced_green_fundus)
 	f5 = clahe.apply(f4)		
 
-	# removing very small contours through are parameter noise removal
+	# removing very small contours through area parameter noise removal
 	ret,f6 = cv2.threshold(f5,15,255,cv2.THRESH_BINARY)	
 	mask = np.ones(f5.shape[:2], dtype="uint8") * 255	
 	im2, contours, hierarchy = cv2.findContours(f6.copy(),cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
@@ -80,14 +62,10 @@ while no_of_images < 130:
 	
 	finimage = cv2.bitwise_and(fundus_eroded,fundus_eroded,mask=xmask)	
 	blood_vessels = cv2.bitwise_not(finimage)	
-	name = str(counter) + '.jpg'
-	name2 = str(founter) + '.jpg'
+	name = str(counter) + '.jpg'	
 	scipy.misc.imsave(name,blood_vessels)
-	scipy.misc.imsave(name2, newfin )
-	counter = counter +1;
-	founter = founter +1;
+	counter = counter +1;	
 	no_of_images = no_of_images+1;
 
 print("fcuk")
 cv2.waitKey(0)
-
