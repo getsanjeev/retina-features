@@ -22,7 +22,7 @@ def remove_optical_disk(image,counter):
 	row = 0	
 	get_coloumn = 0
 	get_row = 0
-	gotit = 0
+	gotit = 1
 	mean_intensity_of_image = np.mean(image)	
 	size_array = image.shape
 	no_of_rows = size_array[0]
@@ -41,15 +41,22 @@ def remove_optical_disk(image,counter):
 			coloumn = coloumn+30			
 		coloumn = 0
 		row = row+40	
-	sorted(mean_table)
-	while gotit == 1 :
-		index, value = max(enumerate(mean_table), key=operator.itemgetter(1))
-		get_row = index_table_row[index]
-		get_coloumn = index_table_coloumn[index]
-		if get_row > 250 and get_row < 650 :
-			gotit = 0
+	sorted_table = sorted(mean_table,reverse = True)	
+	print(sorted_table[0:10])
+	index = 0
+	newindex = 0
+	while gotit == 1 :	
+		newindex = mean_table.index(sorted_table[index])
+		print(mean_table[newindex])
+		get_row = index_table_row[newindex]
+		print(get_row)
+		get_coloumn = index_table_coloumn[newindex]
+		if get_row > 190 and get_row < 420 :
+			print("selected")
+			gotit = 0		
 		else :
-			print(mean_table.pop())
+			index = index + 1
+			
 		
 	image[get_row:get_row+159,get_coloumn:get_coloumn+119]	= mean_intensity_of_image
 	#blur = cv2.GaussianBlur(image,(5,5),0)	
@@ -62,7 +69,7 @@ def remove_optical_disk(image,counter):
 images = [cv2.imread(file) for file in glob.glob('/home/sherlock/DR/MODEL_1_SVM/data/*png')]
 print(len(images))
 
-while no_of_images < 2:
+while no_of_images < 130:
 
 	fundus = images[no_of_images]	
 	dim = (800,600)
@@ -98,6 +105,8 @@ while no_of_images < 2:
 	counter = counter + 1
 	founter = founter + 1
 	no_of_images = no_of_images+ 1
+	print()
+	print("NEXT IMAGE : ", no_of_images)
 
 
 print("fcuk")
