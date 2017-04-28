@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+import csv
 
 def maskWhiteCounter (mask_input):
     counter = 0
@@ -63,8 +64,24 @@ def extract_bv(image):
 	return blood_vessels
 
 
+
+def write2csv(image):	
+	i = 0
+	j = 0
+	black = 0
+	while i<image.shape[0]:
+		j = 0
+		while j<image.shape[1]:
+			if image[i,j] == 0:
+				black = black + 1
+			j = j+ 1
+		i = i+1
+	
+
+
+
 if __name__ == "__main__":
-    pathFolder = "/home/sherlock/DR/MODEL_1_SVM/Base14"
+    pathFolder = "/home/sherlock/DR/MODEL_1_SVM/Base11"
     filesArray = [x for x in os.listdir(pathFolder) if os.path.isfile(os.path.join(pathFolder,x))]
     threshold = [30, 155, 180]
     windowSize = 50
@@ -74,11 +91,29 @@ if __name__ == "__main__":
     if not os.path.exists(exudateFolder):
         os.mkdir(exudateFolder)
 
-    for file_name in filesArray:
-        print(pathFolder+'/'+file_name)
-        image = cv2.imread(pathFolder+'/'+file_name)
-        exudate_image = extract_bv(image)
-        file_name_no_extension = os.path.splitext(file_name)[0]
-        counter = maskWhiteCounter(exudate_image)
-        array_exudate_pixels.append(counter)
-        cv2.imwrite(exudateFolder+file_name_no_extension+"_exudates.jpg",exudate_image)	
+    with open('bloodvessel1.csv', 'w') as csvfile:
+    	filewriter = csv.writer(csvfile, delimiter=',',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    	filewriter.writerow(['bloodvesselcount', 'countvalue'])
+    	for file_name in filesArray:
+
+        	print(pathFolder+'/'+file_name)
+        	image = cv2.imread(pathFolder+'/'+file_name)
+        	bloodvessel = extract_bv(image)
+        	file_name_no_extension = os.path.splitext(file_name)[0]
+        	counter = maskWhiteCounter(bloodvessel)
+        	array_exudate_pixels.append(counter)
+        	i = 0
+        	j = 0
+        	black = 0
+        	while i<bloodvessel.shape[0]:
+	        	j = 0
+	        	while j<bloodvessel.shape[1]:
+        			if bloodvessel[i,j] == 0:
+        				black = black + 1
+        			j = j+ 1
+        		i = i +1
+
+        	filewriter = csv.writer(csvfile, delimiter=',',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        	filewriter.writerow([file_name_no_extension+"_bloodvessel.jpg",black ])
+        	cv2.imwrite(exudateFolder+file_name_no_extension+"_bloodvessel.jpg",bloodvessel)	
+    
