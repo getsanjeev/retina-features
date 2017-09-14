@@ -112,8 +112,10 @@ def findMA(path, file_name_without_extension):
     print(eye_final[200,300])
     print(eye_final[400,600])
 
-    #eye_example.save('/home/utkarsh/SimpleCV/MA_34/'+file_name_without_extension+'_MAoverlay.tif')
-    eye_final.save('/home/utkarsh/DR_images/MA/'+file_name_without_extension+'_MA.tif')
+    eye_example.save(file_name_without_extension+'_MAoverlay.tif')
+    print("overlay saved")
+    eye_final.save(file_name_without_extension+'_MA.tif')
+    print("MA saved")
     # print("fourth time")
     print(eye_final[140,140])
     print(eye_final[180,180])
@@ -122,7 +124,7 @@ def findMA(path, file_name_without_extension):
     return eye_final
 
 
-pathFolder = "/home/utkarsh/DR_images"
+pathFolder = "/home/utkarsh/SimpleCV/input"
 filesArray = [x for x in os.listdir(pathFolder) if os.path.isfile(os.path.join(pathFolder,x))]
 # MA_Folder = pathFolder+"/MA/"
 
@@ -132,7 +134,7 @@ filesArray = [x for x in os.listdir(pathFolder) if os.path.isfile(os.path.join(p
 
 with open('ma.csv', 'w') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    filewriter.writerow(['microaneuryscount', 'countvalue'])
+    filewriter.writerow(['microaneurysmcount', 'countvalue'])
     for file_name in filesArray:
         print(pathFolder+'/'+file_name)
         print(os.path.splitext(file_name)[0])        
