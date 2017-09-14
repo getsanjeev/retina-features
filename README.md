@@ -6,15 +6,19 @@ In this project, we extract features namely blood vessels and microaneurysms for
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-
-  - [Getting Started](#getting-started)
-    - [Preprocessing](#preprocessing)
-      - [Prerequisites](#prerequisites)
-      - [Usage](#usage)
-    - [Microaneurysm Detection](#microaneurysm-detection)
-      - [Prerequisites](#prerequisites-1)
-      - [Usage](#usage-1)
-      - [Sample Output](#sample-output)
+- [Getting Started](#getting-started)
+  - [Preprocessing](#preprocessing)
+    - [Prerequisites](#prerequisites)
+    - [Usage](#usage)
+  - [Microaneurysm Detection](#microaneurysm-detection)
+    - [Prerequisites](#prerequisites-1)
+    - [Usage](#usage-1)
+    - [Sample Output](#sample-output)
+- [Documents](#documents)
+	- [Poster, Presentation and Report](#documents)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -99,3 +103,25 @@ Following two images are generated in the same folder as `microaneurysm.py`:
 microaneurysmcount | countvalue
 --- | ---
 input_microaneurysm.jpg | 2920
+
+## Documents
+
+* [Poster](poster.pdf)
+* [Presentation](presentation.pdf)
+* [Report](report.pdf)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+* **[Sanjeev Dubey]()** - *getsanjeevdubey@gmail.com*
+* **[Utkarsh Mittal]()** - *utkarshmttl@gmail.com*
+* **[Raghav Singh]()** - *raghav97singh.rs*
+
+See also the list of [contributors](https://github.com/getsanjeev/classifier-fundus-diabetic-retinopathy/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the BSD-3-Clause License - see the [LICENSE.md](LICENSE.md) file for details
