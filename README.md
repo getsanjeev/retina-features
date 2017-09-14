@@ -1,3 +1,5 @@
+<img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/4104/media/retina.jpg" align="right" />
+
 # Blood Vessel Segmentation and Microaneurysm Detection for Diabetic Retinopathy
 
 > In this project, we extract features namely blood vessels and microaneurysms for the purpose of analysing fundus images to detect signs of retinal tissue damage.
