@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2017, Sanjeev Dubey, Utkarsh Mittal
+Copyright (c) 2017, Sanjeev Dubey, Utkarsh Mittal, Raghav Singh
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
