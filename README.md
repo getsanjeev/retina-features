@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/16596327/30457494-28eefde8-99c5-11e7-96ce-19f713a9d989.jpg" align="right" />
+<a href="http://ducic.ac.in/"><img src="https://user-images.githubusercontent.com/16596327/30458030-7398f9be-99c7-11e7-88f2-d39b4630a0a8.png" align="right" /></a>
 
 # Blood Vessel Segmentation and Microaneurysm Detection for Diabetic Retinopathy
 
