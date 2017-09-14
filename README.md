@@ -116,9 +116,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Authors
 
-* **[Sanjeev Dubey]()** - *getsanjeevdubey@gmail.com*
-* **[Utkarsh Mittal]()** - *utkarshmttl@gmail.com*
-* **[Raghav Singh]()** - *raghav97singh.rs*
+* **[Sanjeev Dubey](https://github.com/getsanjeev)** - *getsanjeevdubey@gmail.com*
+* **[Utkarsh Mittal](https://github.com/utkarshmttl)** - *utkarshmttl@gmail.com*
+* **[Raghav Singh](https://github.com/raghav1875)** - *raghav97singh.rs@gmail.com*
 
 See also the list of [contributors](https://github.com/getsanjeev/classifier-fundus-diabetic-retinopathy/graphs/contributors) who participated in this project.
 
