@@ -1,4 +1,4 @@
-<img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/4104/media/retina.jpg" align="right" />
+<img src="https://user-images.githubusercontent.com/16596327/30457494-28eefde8-99c5-11e7-96ce-19f713a9d989.jpg" align="right" />
 
 # Blood Vessel Segmentation and Microaneurysm Detection for Diabetic Retinopathy
 
