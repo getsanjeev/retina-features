@@ -60,6 +60,45 @@ This will preprocess all the images into `processed/<variation>/train/` and `pro
 
 <br><br>
 
+### Bloodvessel Segmentation
+___
+
+#### Prerequisites
+
+The following must be installed and configured:
+* [Python](https://www.python.org/downloads/)
+
+Follow the links for source and installation instructions.
+#### Usage
+Change the `pathFolder` and `destinationFolder` variable in the file `bloodvessels.py` to point to the directory where your images are located.
+```
+pathFolder = "/home/sherlock/DR/MODEL_1_SVM/Base11/"
+destinationFolder = "/home/sherlock/DR/MODEL_1_SVM/Base11Bloodvessels/"
+```
+Open a terminal and navigate to where the `bloodvessels.py` file is located and run the following command:
+```
+$ python bloodvessels.py
+```
+*OR*
+```
+$ python3 bloodvessels.py
+```
+
+For each image in your input folder, this will save one image `<imageName>_Bloodvessel.bmp` (segmented Bloodvessels).
+
+#### Sample Output
+For some image in Base11:
+
+<img src="https://user-images.githubusercontent.com/16596327/30451279-beedb542-99b0-11e7-8f46-a215dbb68695.jpg" width="400">
+
+Following resultant image is generated in the `Destination folder`:
+
+* Bloodvessels.bmp
+
+<img src="https://user-images.githubusercontent.com/20872683/30469609-ae959b7a-9a0e-11e7-92b7-e2e90a49cc88.png" width="400"> 
+
+<br><br>
+
 ### Microaneurysm Detection
 ___
 
