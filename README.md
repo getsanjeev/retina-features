@@ -1,4 +1,4 @@
-<a href="http://ducic.ac.in/"><img src="https://user-images.githubusercontent.com/16596327/30458286-82dac596-99c8-11e7-8b99-5a864544cd2e.png" align="right" height="200"/></a>
+<img src="https://user-images.githubusercontent.com/16596327/30457494-28eefde8-99c5-11e7-96ce-19f713a9d989.jpg" align="right" />
 
 # Blood Vessel Segmentation and Microaneurysm Detection for Diabetic Retinopathy
 
@@ -117,6 +117,8 @@ input_microaneurysm.jpg | 2920
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
+
+<a href="http://ducic.ac.in/"><img src="https://user-images.githubusercontent.com/16596327/30467922-9d4985ce-9a05-11e7-81aa-9f5348eb40de.png" align="right" width="300"/></a>
 
 * **[Sanjeev Dubey](https://github.com/getsanjeev)** - *getsanjeevdubey@gmail.com*
 * **[Utkarsh Mittal](https://github.com/utkarshmttl)** - *utkarshmttl@gmail.com*
