@@ -21,6 +21,7 @@
     - [Usage](#usage-2)
     - [Sample Output](#sample-output-1)
 - [Documents](#documents)
+    - [Poster, Presentation and Report](#documents)
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
