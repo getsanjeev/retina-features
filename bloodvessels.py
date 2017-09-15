@@ -60,5 +60,5 @@ if __name__ == "__main__":
 		file_name_no_extension = os.path.splitext(file_name)[0]
 		fundus = cv2.imread(pathFolder+'/'+file_name)		
 		bloodvessel = extract_bv(fundus)
-		cv2.imwrite(destinationFolder+file_name_no_extension+"_bloodvessel.bmp",bloodvessel)
+		cv2.imwrite(destinationFolder+file_name_no_extension+"_bloodvessel.png",bloodvessel)
     
