@@ -27,7 +27,7 @@
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for you to test the algorithms on your own fundus images.
+These instructions will get you a copy of the project up and running on your local machine for you to test the algorithms on your own fundus images. The [MESSIDOR](http://www.adcis.net/en/Download-Third-Party/Messidor.html) database has been used for demonstration here for which we are grateful.
 <br><br>
 ### Preprocessing
 ___
@@ -67,6 +67,7 @@ ___
 
 The following must be installed and configured:
 * [Python](https://www.python.org/downloads/)
+* [OpenCV](http://opencv.org/)
 
 Follow the links for source and installation instructions.
 #### Usage
@@ -84,7 +85,7 @@ $ python bloodvessels.py
 $ python3 bloodvessels.py
 ```
 
-For each image in your input folder, this will save one image `<imageName>_Bloodvessel.bmp` (segmented Bloodvessels).
+For each image in your input folder, this will save one image `<imageName>_Bloodvessel.png` (segmented Bloodvessels).
 
 #### Sample Output
 For some image in Base11:
@@ -93,7 +94,7 @@ For some image in Base11:
 
 Following resultant image is generated in the `Destination folder`:
 
-* Bloodvessels.bmp
+* Bloodvessels.png
 
 <img src="https://user-images.githubusercontent.com/20872683/30469609-ae959b7a-9a0e-11e7-92b7-e2e90a49cc88.png" width="400"> 
 
