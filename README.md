@@ -2,7 +2,9 @@
 
 # Blood Vessel Segmentation and Microaneurysm Detection for Diabetic Retinopathy
 
-> In this project, we extract features namely blood vessels and microaneurysms for the purpose of analysing fundus images to detect signs of retinal tissue damage.
+> In this project, we extract features namely blood vessels microaneurysms and exudates for the purpose of analysing fundus images to detect signs of retinal tissue damage.
+
+> Work involving segmentation of hardexudates has not been included. It can be found [here](https://github.com/getsanjeev/retinal-exudates-detection).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
